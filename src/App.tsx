@@ -1,4 +1,4 @@
-import { Button, Show } from "@chakra-ui/react"
+import { Show } from "@chakra-ui/react"
 import { Grid, GridItem } from '@chakra-ui/react'
 export default function App() {
   return (
