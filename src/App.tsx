@@ -4,7 +4,7 @@ export default function App() {
   return (
     <>
     <Grid templateAreas={{
-      base: ` "main"`,
+      base: `"nav" "main"`,
       lg:`"nav nav" "aside main"`
     }}>
       <GridItem area={'nav'} bg={"coral"}>Nav</GridItem>
