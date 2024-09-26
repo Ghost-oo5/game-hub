@@ -14,9 +14,9 @@ export default function GameGrid() {
         </Text>
       )}
       <SimpleGrid
-        columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
+        columns={{ sm: 1, md: 2, lg: 3, xl: 3 }}
         padding={10}
-        spacing={10}
+        spacing={3}
       >
         {isLoading && skeletons.map((item)=><GameCardSkeleton key={item}/>)}
         {data.map((item) => (
