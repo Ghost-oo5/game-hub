@@ -1,5 +1,6 @@
 import {
   Button,
+  Heading,
   HStack,
   Image,
   List,
@@ -21,12 +22,14 @@ export default function GenreList({selectedGenre,onSelectGenre}:Props) {
   if (isLoading) return <Spinner />;
   return (
     <>
+    <Heading fontSize={'2xl'} marginY={2}>Genres</Heading>
       <List>
         {data.map((item) => (
           <ListItem key={item.id} paddingY={"10px"}>
             <HStack>
               <Image
                 boxSize={"32px"}
+                objectFit={"cover"}
                 borderRadius={8}
                 src={getCroppedImage(item.image_background)}
               />
@@ -35,6 +38,8 @@ export default function GenreList({selectedGenre,onSelectGenre}:Props) {
                 variant={"link"}
                 fontSize={"lg"}
                 fontWeight={item.id==selectedGenre?.id ? "bold": "normal"}
+                whiteSpace={'normal'}
+                textAlign={'left'}
               >
                 {item.name}
               </Button>
