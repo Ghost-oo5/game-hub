@@ -10,10 +10,10 @@ interface Props
 export default function SortSelector({onSelectSortOrder, sortOrder}:Props) {
   const SortOrders = [
     { value: "", label: "Relevance" },
-    { value: "-added", label: "Data Added" },
     { value: "name", label: "Name" },
+    { value: "-added", label: "Date Added" },
     { value: "-released", label: "Release Date" },
-    { value: "metacritic", label: "Popularity" },
+    { value: "-metacritic", label: "Popularity" },
     { value: "rating", label: "Average Rating" },
   ];
 
@@ -23,7 +23,7 @@ export default function SortSelector({onSelectSortOrder, sortOrder}:Props) {
     <>
       <Menu>
         <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-          Order {currentSortOrder?.label || "Relevance"}
+          Sort by: {currentSortOrder?.label || "Relevance"}
         </MenuButton>
         <MenuList>
           {SortOrders.map((item) => (
