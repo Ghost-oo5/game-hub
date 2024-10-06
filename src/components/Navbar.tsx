@@ -12,7 +12,7 @@ interface Props
 export default function Navbar({onSearch}:Props) {
   return (
     <HStack  padding={"10px"}>
-      <Image src={logo} boxSize={"70px"} className="logo" />
+      <Image src={logo} boxSize={"70px"} className="logo" cursor={'pointer'} onClick={()=>window.location.reload()}/>
       <SearchInput onSearch={onSearch} />
       <ColorModeSwitch />
     </HStack>

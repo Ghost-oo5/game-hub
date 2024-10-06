@@ -37,7 +37,7 @@ export default function GenreList({selectedGenre,onSelectGenre}:Props) {
                 onClick={() => onSelectGenre(item)}
                 variant={"link"}
                 fontSize={"xl"}
-                fontWeight={item.id==selectedGenre?.id ? "bold": "normal"}
+                fontWeight={item.id==selectedGenre?.id ? "bolder": "normal"}
                 whiteSpace={'normal'}
                 textAlign={'left'}
               >
