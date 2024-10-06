@@ -28,7 +28,7 @@ export default function GenreList({selectedGenre,onSelectGenre}:Props) {
           <ListItem key={item.id} paddingY={"10px"}>
             <HStack>
               <Image
-                boxSize={"32px"}
+                boxSize={"45px"}
                 objectFit={"cover"}
                 borderRadius={8}
                 src={getCroppedImage(item.image_background)}
@@ -36,7 +36,7 @@ export default function GenreList({selectedGenre,onSelectGenre}:Props) {
               <Button
                 onClick={() => onSelectGenre(item)}
                 variant={"link"}
-                fontSize={"lg"}
+                fontSize={"xl"}
                 fontWeight={item.id==selectedGenre?.id ? "bold": "normal"}
                 whiteSpace={'normal'}
                 textAlign={'left'}

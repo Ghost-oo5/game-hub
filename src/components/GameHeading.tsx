@@ -7,7 +7,7 @@ interface Props
 }
 export default function GameHeading({gameQuery}:Props) {
 
-    const heading = `${gameQuery.platform?.name ||''} ${gameQuery.genre?.name ||''} Games`
+    const heading = `${gameQuery.platform?.name ||''} ${gameQuery.genre?.name ||''} ${gameQuery.searchText || 'Games'} `
     
   return (
     

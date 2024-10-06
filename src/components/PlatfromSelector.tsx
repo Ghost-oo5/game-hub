@@ -15,7 +15,7 @@ export default function PlatfromSelector({ onSelectPlatform,selectedPlatform }: 
     <>
       <Menu>
         <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-          Platform: {selectedPlatform?.name || "Not Selected"}
+          Platform: {selectedPlatform?.name || "Not Specified"}
         </MenuButton>
         <MenuList>
           {data.map((item) => (

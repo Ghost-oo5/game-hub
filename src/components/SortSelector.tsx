@@ -14,7 +14,7 @@ export default function SortSelector({onSelectSortOrder, sortOrder}:Props) {
     { value: "-added", label: "Date Added" },
     { value: "-released", label: "Release Date" },
     { value: "-metacritic", label: "Popularity" },
-    { value: "rating", label: "Average Rating" },
+    { value: "-rating", label: "Average Rating" },
   ];
 
   const currentSortOrder = SortOrders.find((item)=>item.value=== sortOrder)
