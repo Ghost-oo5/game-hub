@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 // import useData from "./useData";
+import ms from "ms";
 import platforms from '../Data/Platforms';
 import APIClient from "../Services/api-client";
 
@@ -16,7 +17,7 @@ const usePlatforms = () =>
   useQuery({
     queryKey: ['platforms'],
     queryFn:  apiclient.getAll,
-    staleTime: 24 * 60 * 60 * 1000, //Platforms remain fresh fro 24 hours
+    staleTime: ms('24h'), //Platforms remain fresh fro 24 hours
     initialData:{count:platforms.length, results:platforms, next:null} // this line loads platforms data from local directory not from API. it helps to load platforms faster
   });
 
