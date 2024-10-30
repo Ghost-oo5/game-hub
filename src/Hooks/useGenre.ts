@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import genres from "../Data/Genre";
 import apiClient from "../Services/api-client";
 import { FetchResponse } from "./useData";
-
+//
 export interface Genre {
   id: number;
   name: string;
