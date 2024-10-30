@@ -24,24 +24,24 @@ export default function GenreList({selectedGenre,onSelectGenre}:Props) {
     <>
     <Heading fontSize={'2xl'} marginY={2}>Genres</Heading>
       <List>
-        {data.map((item) => (
-          <ListItem key={item.id} paddingY={"10px"}>
+        {data?.results.map((genre) => (
+          <ListItem key={genre.id} paddingY={"10px"}>
             <HStack>
               <Image
                 boxSize={"45px"}
                 objectFit={"cover"}
                 borderRadius={8}
-                src={getCroppedImage(item.image_background)}
+                src={getCroppedImage(genre.image_background)}
               />
               <Button
-                onClick={() => onSelectGenre(item)}
+                onClick={() => onSelectGenre(genre)}
                 variant={"link"}
                 fontSize={"xl"}
-                fontWeight={item.id==selectedGenre?.id ? "bolder": "normal"}
+                fontWeight={genre.id==selectedGenre?.id ? "bolder": "normal"}
                 whiteSpace={'normal'}
                 textAlign={'left'}
               >
-                {item.name}
+                {genre.name}
               </Button>
             </HStack>
           </ListItem>
