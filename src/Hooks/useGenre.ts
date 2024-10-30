@@ -15,7 +15,7 @@ const useGenres = () =>
     queryKey: ["genres"],
     queryFn:  apiclient.getAll,
     staleTime: 24 * 60 * 60 * 1000, //Genres remain fresh fro 24 hours
-    initialData: { count: genres.length, results: genres }, // this line loads genres data from local directory not from API. it helps to load genres faster
+    // initialData: { count: genres.length, results: genres }, // this line loads genres data from local directory not from API. it helps to load genres faster
   });
 
 export default useGenres;

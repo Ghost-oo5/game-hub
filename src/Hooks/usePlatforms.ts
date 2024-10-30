@@ -16,7 +16,7 @@ const usePlatforms = () =>
     queryKey: ["platforms"],
     queryFn:  apiclient.getAll,
     staleTime: 24 * 60 * 60 * 1000, //Platforms remain fresh fro 24 hours
-    initialData:{count:platforms.length, results:platforms} // this line loads platforms data from local directory not from API. it helps to load platforms faster
+    // initialData:{count:platforms.length, results:platforms} // this line loads platforms data from local directory not from API. it helps to load platforms faster
   });
 
 export default usePlatforms;
