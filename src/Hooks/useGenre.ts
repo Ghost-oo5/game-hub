@@ -19,3 +19,9 @@ const useGenres = () =>
   });
 
 export default useGenres;
+
+export const Genre =(id?:number)=>
+{
+  const {data:genres} = useGenres();
+  return genres?.results.find((item)=>item.id == id)
+}

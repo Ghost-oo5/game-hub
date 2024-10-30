@@ -8,7 +8,7 @@ interface Props {
 }
 export default function PlatfromSelector({ onSelectPlatform,selectedPlatformId }: Props) {
   const { data, error } = usePlatforms();
-const selectedPlatform = data.results.find((item)=>item.id==selectedPlatformId)
+const selectedPlatform = Platform(selectedPlatformId)
   if (error) return null;
   return (
     <>
