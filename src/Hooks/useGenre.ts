@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import genres from "../Data/Genre";
-import apiClient, { FetchResponse } from "../Services/api-client";
+import APIClient from "../Services/api-client";
 
+const apiclient = new APIClient<Genre>('/genres')
 //
 export interface Genre {
   id: number;
@@ -12,9 +13,7 @@ export interface Genre {
 const useGenres = () =>
   useQuery({
     queryKey: ["genres"],
-    queryFn: () =>
-      apiClient.get<FetchResponse<Genre>>("/genres").then((res) => res.data),
-
+    queryFn:  apiclient.getAll,
     staleTime: 24 * 60 * 60 * 1000, //Genres remain fresh fro 24 hours
     initialData: { count: genres.length, results: genres }, // this line loads genres data from local directory not from API. it helps to load genres faster
   });

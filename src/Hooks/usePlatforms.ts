@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 // import useData from "./useData";
-import apiClient, { FetchResponse } from "../Services/api-client";
-import platforms from '../Data/Platforms'
+import platforms from '../Data/Platforms';
+import APIClient from "../Services/api-client";
 
 export interface Platform {
   id: number;
@@ -9,13 +9,12 @@ export interface Platform {
   slug: string;
 }
 
+const apiclient = new APIClient<Platform>('/platforms')
+
 const usePlatforms = () =>
   useQuery({
     queryKey: ["platforms"],
-    queryFn: () =>
-      apiClient
-        .get<FetchResponse<Platform>>("/platforms/lists/parents")
-        .then((res) => res.data),
+    queryFn:  apiclient.getAll,
     staleTime: 24 * 60 * 60 * 1000, //Platforms remain fresh fro 24 hours
     initialData:{count:platforms.length, results:platforms} // this line loads platforms data from local directory not from API. it helps to load platforms faster
   });
